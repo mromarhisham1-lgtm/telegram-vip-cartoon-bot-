@@ -4,6 +4,7 @@ import re
 import requests
 import asyncio
 import difflib
+from keep_alive import keep_alive
 from pyrogram import Client, filters
 from pyrogram.types import (
     InlineKeyboardMarkup, InlineKeyboardButton, Message,
@@ -220,5 +221,5 @@ async def search(client, message):
                 )
             except Exception as e:
                 print(f"خطأ أثناء إرسال الرسالة للمشرف {admin_id}: {e}")
-
+keep_alive()
 app.run()
